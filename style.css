@@ -1,0 +1,53 @@
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tarea{
+    width: 200px;
+    height: 200px;
+    background-color:rgb(211, 162, 55);
+    margin: 10px;
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.cabecera{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.menuLateral{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 31px 10px 0px 10px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 1px 0px 0px #D5D7DC
+}
+
+.menuLateral button {
+    background-color: white;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.producto{
+    margin: 8px;
+    height: 200px;
+    width: 200px;
+}
+
+.contenedorProductos{
+    display: flex;
+
+}
