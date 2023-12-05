@@ -19,7 +19,7 @@
     <body>
         <div class="contenedor">
             <div class="col" style="width: 40%">
-                <img class="loginImage" src="/Images/loginImage.jpg" alt="">
+                <img class="loginImage" src="./Images/loginImage.jpg" alt="">
             </div>
             <div class="col" style="width: 60%; padding: 16px;">
                 <h1>Iniciar Sesión</h1>
@@ -32,9 +32,9 @@
                 </form>
             </div>
         </div>
-        <a href="vendedor.html"><button>Pagina de Ventas</button></a>
-        <a href="inventario.html"><button>Inventario</button></a>
-        <a href="inventario.html"><button>Agregar Producto</button></a>
+        <a href="vendedor.php"><button>Pagina de Ventas</button></a>
+        <a href="inventario.php"><button>Inventario</button></a>
+        <a href="./CRUD/agregaProd.php"><button>Agregar Producto</button></a>
     </body>
 </html>
 <script>
