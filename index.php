@@ -1,3 +1,7 @@
+<?php 
+    
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +23,7 @@
             </div>
             <div class="col" style="width: 60%; padding: 16px;">
                 <h1>Iniciar Sesión</h1>
-                <form id="loginForm" class="d-flex" style="flex-direction: column; gap: 8px;">
+                <form id="loginForm" class="d-flex" FORM="POST" style="flex-direction: column; gap: 8px;">
                     <label for="">Correo/Nombre</label>
                     <input type="text" name="name" placeholder="nombre">
                     <label for="">Contraseña</label>
