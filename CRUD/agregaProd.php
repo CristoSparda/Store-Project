@@ -1,5 +1,5 @@
 <?php 
-    
+
 ?>
 <html lang="en">
 <head>
@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="file">
+    <label for="">Agregar una imagen o un link</label>
+    <label for="">Ingresar nombre</label>
+    <input type="text">
 </body>
 </html>
