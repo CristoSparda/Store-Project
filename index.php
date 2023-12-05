@@ -34,6 +34,7 @@
         </div>
         <a href="vendedor.html"><button>Pagina de Ventas</button></a>
         <a href="inventario.html"><button>Inventario</button></a>
+        <a href="inventario.html"><button>Agregar Producto</button></a>
     </body>
 </html>
 <script>
