@@ -189,23 +189,39 @@
                     echo "<span style='color: white; background-color: red; padding: 8px; border-radius: 8px;'> " . $_GET['error'] . "</span>";
                 }
             ?>
-            <div class="row">
-                <h2>Cuenta</h2>
+            <div class="row" style="height: 10%; display: flex; align-content: center;">
+                <h2 style="display: flex; justify-content:center;">Cuenta #3</h2>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="row">
-                        <h2>Fanta</h2>
-                    </div>
-                    <div class="row">
-                        <span>Cantidad: 2</span>
-                    </div>
+                    <h4>Producto</h4>
                 </div>
                 <div class="col">
-                    20.0 $
+                    <h4>Cantidad</h4>
                 </div>
                 <div class="col">
-                    Total
+                    <h4>Total</h4>
+                </div>
+            </div>
+            <!-- Aqui van a estar los productos que se van agregando -->
+            <div class="row">
+                <div class="col">
+                    <span>Fanta</span>
+                </div>
+                <div class="col">
+                    <span>3</span>
+                </div>
+                <div class="col" style="width: 70%;">
+                    <span>74</span>
+                </div>
+            </div>
+            <!-- barra inferior para obtener el total de la venta -->
+            <div class="rowTotal">
+                <div class="col" style="display:fleX;justify-content: center;">
+                    <h3>Total de la venta:</h3>
+                </div>
+                <div class="col" style="display:fleX;justify-content: center;">
+                    <h2>20</h2>
                 </div>
             </div>
         </div>
