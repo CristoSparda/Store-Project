@@ -8,8 +8,15 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    background-color: aqua;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
 
 .tarea{
     width: 200px;
@@ -50,8 +57,11 @@ p{
 
 .producto{
     margin: 8px;
-    height: 200px;
+}
+
+.imgProducto{
     width: 200px;
+    height: 200px;
 }
 
 .contenedorProductos{
@@ -75,7 +85,7 @@ p{
     display: flex;
     flex-direction: column;
     width: 70%;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 0px 0px 10px;
     height: 100%;
     background: #ffffff;
     box-shadow: 1px 0px 0px #D5D7DC;
@@ -86,7 +96,8 @@ p{
 }
 
 .imagenCategoria{
-    width: 20% !important;
+    width: 150px;
+    height: 150px;
     margin-bottom: 8px;
     border-radius: 8px;
 }
@@ -114,13 +125,35 @@ p{
 }
 
 .contenedorVenta{
-    margin: 16px;
+    padding: 16px;
 }
 
-input{
-    border-radius: 4px;
+.row{
+    margin-right: 0px !important;
+    background-color: coral;
 }
 
-form * {
-    width: 300px;
+.entrada{
+    width: 200px;
+    height: 250px;
+    display: none;
+}
+
+.rowInventario{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.botonAgregar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    border-radius: 50%;
+    background-color: green;
+    color: #FFFFFF;
+    position: fixed;
+    right: 10px;
+    bottom: 10px; 
 }

@@ -19,17 +19,23 @@
             </div>
             <div class="col" style="width: 60%; padding: 16px; justify-content:center;">
                 <h1>Iniciar Sesión</h1>
-                <form id="loginForm" class="d-flex" style="flex-direction: column; gap: 8px;">
+                <form action="./logic/Login.php" class="d-flex" method="POST" style="flex-direction: column; gap: 8px;">
                     <label for="">Correo/Nombre</label>
-                    <input type="text" name="name" placeholder="nombre">
+                    <input type="text" name="usuario" placeholder="Ingresar Nombre">
                     <label for="">Contraseña</label>
-                    <input type="text" name="password" placeholder="password">
+                    <input type="password" name="contraseña" placeholder="Ingresar contraseña">
                     <button>Ingresar</button>
+                    <?php 
+                        if(isset($_GET['error'])){
+                            echo "<span style='color: white; background-color: red; padding: 8px; border-radius: 8px;'> " . $_GET['error'] . "</span>";
+                        }
+                    ?>
                 </form>
             </div>
         </div>
-        <a href="vendedor.html"><button>Pagina de Ventas</button></a>
-        <a href="inventario.html"><button>Inventario</button></a>
+        <a href="vendedor.php"><button>Pagina de Ventas</button></a>
+        <a href="inventario.php"><button>Inventario</button></a>
+        <a href="./CRUD/agregaProd.php"><button>Agregar Producto</button></a>
     </body>
 </html>
 <script>
