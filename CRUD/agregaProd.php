@@ -15,7 +15,7 @@
             <div class="entrada">
             </div>
                 <input type="file" name="imagen" accept="image/*" >
-            <span>Agregar una imagen o un link</span>
+            <span>Agregar una imagen git o un link</span>
         </div>
         <div class="col">
             <span>Ingresar nombre</span>

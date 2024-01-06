@@ -18,10 +18,10 @@
 
     <body>
         <div class="contenedor">
-            <div class="col" style="width: 40%">
+            <div class="col" style="width: 60%">
                 <img class="loginImage" src="./Images/loginImage.jpg" alt="">
             </div>
-            <div class="col" style="width: 60%; padding: 16px;">
+            <div class="col" style="width: 40%; padding: 16px;">
                 <h1>Iniciar Sesión</h1>
                 <form id="loginForm" class="d-flex" FORM="POST" style="flex-direction: column; gap: 8px;">
                     <label for="">Correo/Nombre</label>
