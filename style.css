@@ -74,7 +74,7 @@ p{
     height: 100%;
 }
 
-.col{
+.columna{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +129,7 @@ p{
     width: 30%;
 }
 
-.row{
+.rowP{
     margin-right: 0px !important;
 }
 
@@ -170,4 +170,13 @@ p{
     background-color: aqua;
     align-items: center;
     justify-content: center;
+}
+
+.texto{
+    border: 1px solid #1E1E1E;
+    border-radius: 8px;
+}
+
+.btn:hover{
+    background-color: #F7F7F9;
 }
