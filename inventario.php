@@ -43,8 +43,9 @@
     <title>Inventario</title>
     
 	<link href="style.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -76,8 +77,8 @@
                         <span class="nombre">Id: <?php echo $row["id"]; ?></span>
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                        <button type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
-                        <button type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
                     </div>
                 <?php
                 }
@@ -96,8 +97,8 @@
                         <span class="nombre">Id: <?php echo $row["id"]; ?></span>
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                        <button type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
-                        <button type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
                     </div>
                 <?php
                 }
