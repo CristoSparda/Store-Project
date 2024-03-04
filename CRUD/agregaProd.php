@@ -18,7 +18,10 @@
             <h1>Agrega un producto</h1>
             <br>
             <img src="" class="entrada" id="ImagenProducto" alt="">
-            <input id="imagen" type="file" name="imagen">
+            <label for="imagen">
+                <img src="../Images/agregar.jpg" class="entrada" style="display: block;" id="imgPrevia">
+            </label>
+            <input id="imagen" type="file" name="imagen" style="display: none;">
         </div>
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <span>Ingresar nombre</span>
@@ -27,8 +30,20 @@
             <span>Ingresar ID</span>
             <input class="texto" type="number" name="id">
             <br>
-            <span>Ingresar categoria</span>
-            <input class="texto" type="text" name="categoria">
+            <div class="dropdown" name="categoria">
+                <button class="btn btn-succes dropdown-toggle" type="button" data-bs-toggle="dropdown" >
+                    Seleccionar categorias
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" value="Bebidas">Bebidas</a></li>
+                    <li><a class="dropdown-item" href="#" value="Comida">Comida</a></li>
+                    <li><a class="dropdown-item" href="#" value="Botanas">Botanas</a></li>
+                    <li><a class="dropdown-item" href="#" value="Limpieza">Limpieza</a></li>
+                    <li><a class="dropdown-item" href="#" value="Abarrotes">Abarrotes</a></li>
+                </ul>
+            </div>
+            <!-- <span>Ingresar categoria</span>
+            <input class="texto" type="text" name="categoria"> -->
         </div>
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <span>Ingresar Precio</span>
@@ -55,10 +70,12 @@
 
     let output = document.getElementById("ImagenProducto");
     let input = document.getElementById("imagen");
+    let imgPrev = document.getElementById("imgPrevia");
 
     input.addEventListener("change", function(event){
         output.src = URL.createObjectURL(event.target.files[0]);
         input.style.display = "none";
+        imgPrev.style.display = "none";
         output.style.display = "block";
     });
 
