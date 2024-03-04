@@ -1,3 +1,39 @@
+<?php
+    require "./logic/conexion.php";
+    
+    session_Start();
+
+    //revisa si se inicio sesión y si es un admin o no
+    if( isset($_SESSION["usuario"]) && isset($_SESSION["rol"]) ){
+        $user = $_SESSION["usuario"];
+        $rol = $_SESSION["rol"];
+    }else{
+        header("Location: http://localhost/store-project/index.php");
+        return;
+    }
+
+   //consultar mediante la variable conexion
+   //Bebidas
+   $consultaBebidas = "SELECT * FROM productos WHERE categoria='bebidas'";
+
+   $queryBebidas = mysqli_query($conexion, $consultaBebidas);
+   //Comida
+   $consultaComida = "SELECT * FROM productos WHERE categoria='comida'";
+
+   $queryComida = mysqli_query($conexion, $consultaComida);
+   //Botana
+   $consultaBotana = "SELECT * FROM productos WHERE categoria='botana'";
+
+   $queryBotana = mysqli_query($conexion, $consultaBotana);
+   //Limpieza
+   $consultaLimpieza = "SELECT * FROM productos WHERE categoria='limpieza'";
+
+   $queryLimpieza = mysqli_query($conexion, $consultaLimpieza);
+   //Abarrotes
+   $consultaAbarrotes = "SELECT * FROM productos WHERE categoria='abarrotes'";
+
+   $queryAbarrotes = mysqli_query($conexion, $consultaAbarrotes);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,17 +62,20 @@
             </div>
     
             <div class="contenedorCategoria" id="collapseComida">
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto row row-cols-2 row-cols-md-2 g-2">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
+                <div class="rowInventario">
+                    <!-- ciclo para mostrar solo la categoria comida  -->
+                    <?php 
+                        while ($row = mysqli_fetch_array($queryComida)){
+                    ?>
+                        <div class="contenedorProducto">
+                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                        </div>
+                    <?php 
+                    }
+                    ?>
                 </div>
             </div>
     
@@ -48,17 +87,20 @@
             </div>
     
             <div class="contenedorCategoria" id="collapseBebida">
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750105530377L.jpg" alt="">
-                    <span>Fanta</span>
-                </div>
-                <div class="contenedorProducto row row-cols-2 row-cols-md-2 g-2">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
+                <div class="rowInventario">
+                    <!-- ciclo para mostrar solo la categoria bebidas  -->
+                    <?php 
+                        while ($row = mysqli_fetch_array($queryBebidas)){
+                    ?>
+                        <div class="contenedorProducto">
+                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
     
@@ -70,17 +112,20 @@
             </div>
     
             <div class="contenedorCategoria" id="collapseLimpieza">
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto row row-cols-2 row-cols-md-2 g-2">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
+                <div class="rowInventario">
+                    <!-- ciclo para mostrar solo la categoria limpieza -->
+                    <?php 
+                    while ($row = mysqli_fetch_array($queryLimpieza)){
+                    ?>
+                        <div class="contenedorProducto">
+                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
     
@@ -92,40 +137,91 @@
             </div>
     
             <div class="contenedorCategoria" id="collapseAbarrotes">
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
+                <div class="rowInventario">
+                    <!-- ciclo para mostrar solo la categoria abarrotes  -->
+                    <?php 
+                        while ($row = mysqli_fetch_array($queryAbarrotes)){
+                    ?>
+                        <div class="contenedorProducto">
+                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                            <span class="nombre">Id: <?php echo $row["id"]; ?></span>
+                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                        </div>
+                    <?php 
+                    }
+                    ?>
                 </div>
-                <div class="contenedorProducto row row-cols-2 row-cols-md-2 g-2">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
-                </div>
-                <div class="contenedorProducto">
-                    <img class="imagenCategoria" src="Images/eggg.jpeg" alt="">
-                    <span>Huevo</span>
+            </div>
+
+            <div class="accordion row">
+                <button class="Drop" id="dropBotana">
+                    <h2>Botana</h2>
+                    <img src="Icons/arrowDown.svg" alt="" srcset="">
+                </button>
+            </div>
+    
+            <div class="contenedorCategoria" id="collapseBotana">
+                <div class="rowInventario">
+                    <!-- ciclo para mostrar solo la categoria Botana  -->
+                    <?php 
+                        while ($row = mysqli_fetch_array($queryBotana)){
+                    ?>
+                        <div class="contenedorProducto">
+                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                            <span class="nombre">Id: <?php echo $row["id"]; ?></span>
+                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                        </div>
+                    <?php 
+                    }
+                    ?>
                 </div>
             </div>
     
         </div>
     
         <div class="contenedorVenta">
-            <div class="row">
-                <h2>Cuenta</h2>
+            <?php 
+                if(isset($_GET['error'])){
+                    echo "<span style='color: white; background-color: red; padding: 8px; border-radius: 8px;'> " . $_GET['error'] . "</span>";
+                }
+            ?>
+            <div class="row" style="height: 10%; display: flex; align-content: center;">
+                <h2 style="display: flex; justify-content:center;">Cuenta #3</h2>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="row">
-                        <h2>Fanta</h2>
-                    </div>
-                    <div class="row">
-                        <span>Cantidad: 2</span>
-                    </div>
+                    <h4>Producto</h4>
                 </div>
                 <div class="col">
-                    20.0 $
+                    <h4>Cantidad</h4>
                 </div>
                 <div class="col">
-                    Total
+                    <h4>Total</h4>
+                </div>
+            </div>
+            <!-- Aqui van a estar los productos que se van agregando -->
+            <div class="row">
+                <div class="col">
+                    <span>Fanta</span>
+                </div>
+                <div class="col">
+                    <span>3</span>
+                </div>
+                <div class="col" style="width: 70%;">
+                    <span>74</span>
+                </div>
+            </div>
+            <!-- barra inferior para obtener el total de la venta -->
+            <div class="rowTotal">
+                <div class="col" style="display:fleX;justify-content: center;">
+                    <h3>Total de la venta:</h3>
+                </div>
+                <div class="col" style="display:fleX;justify-content: center;">
+                    <h2>20</h2>
                 </div>
             </div>
         </div>
@@ -173,7 +269,7 @@
         }
     });
 
-    //función para ocultar la categoria de bebidas
+    //función para ocultar la categoria de abarrotes
     AbarrotesBoton = document.getElementById("dropAbarrotes");
 
     AbarrotesCont = document.getElementById("collapseAbarrotes");
@@ -183,6 +279,20 @@
             AbarrotesCont.style.display = "flex";
         }else {
             AbarrotesCont.style.display = "none";
+        }
+    });
+
+    
+    //función para ocultar la categoria de Botana
+    BotanaBoton = document.getElementById("dropBotana");
+
+    BotanaCont = document.getElementById("collapseBotana");
+
+    BotanaBoton.addEventListener("click", function(){
+        if( BotanaCont.style.display == "none" ){
+            BotanaCont.style.display = "flex";
+        }else {
+            BotanaCont.style.display = "none";
         }
     });
 

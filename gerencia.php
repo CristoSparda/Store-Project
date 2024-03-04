@@ -12,27 +12,10 @@
          return;
      }
 
-    //consultar mediante la variable conexion
-    //Bebidas
-    $consultaBebidas = "SELECT * FROM productos WHERE categoria='bebidas'";
-
-    $queryBebidas = mysqli_query($conexion, $consultaBebidas);
-    //Comida
-    $consultaComida = "SELECT * FROM productos WHERE categoria='comida'";
-
-    $queryComida = mysqli_query($conexion, $consultaComida);
-    //Botana
-    $consultaBotana = "SELECT * FROM productos WHERE categoria='botana'";
-
-    $queryBotana = mysqli_query($conexion, $consultaBotana);
-    //Limpieza
-    $consultaLimpieza = "SELECT * FROM productos WHERE categoria='limpieza'";
-
-    $queryLimpieza = mysqli_query($conexion, $consultaLimpieza);
-    //Abarrotes
-    $consultaAbarrotes = "SELECT * FROM productos WHERE categoria='abarrotes'";
-
-    $queryAbarrotes = mysqli_query($conexion, $consultaAbarrotes);
+     if($rol != "admin"){
+        header("Location: http://localhost/store-project/vendedor.php?error=Necesitas ser administrador para ingresar..." );
+        return;
+     }
 
 ?>
 <!DOCTYPE html>
@@ -40,11 +23,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-    <title>Inventario</title>
+    <title>Administrador</title>
     
 	<link href="style.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
@@ -54,7 +35,6 @@
        
         <div class="menuLateral">
                 <a href="./logic/logout.php"><button>Cerrar sesión</button></a>
-                <a href="./vendedor.php"><button>Ventas</button></a>
                 <h1>Categorias</h1>
                 <br>
                 <button id="botonBebidas"><h4>Bebidas</h4></button>
