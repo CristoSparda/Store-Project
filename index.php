@@ -14,10 +14,10 @@
 
     <body>
         <div class="contenedor">
-            <div class="columna" style="width: 60%">
+            <div class="col" style="width: 60%">
                 <img class="loginImage" src="./Images/loginImage.jpg" alt="">
             </div>
-            <div class="columna" style="width: 40%; padding: 16px; justify-content:center;">
+            <div class="col" style="width: 40%; padding: 16px; justify-content:center;">
                 <h1>Iniciar Sesión</h1>
                 <form action="./logic/Login.php" class="d-flex" method="POST" style="flex-direction: column; gap: 8px;">
                     <label for="">Correo/Nombre</label>

@@ -30,18 +30,14 @@
             <span>Ingresar ID</span>
             <input class="texto" type="number" name="id">
             <br>
-            <div class="dropdown" name="categoria">
-                <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" >
-                    Seleccionar categorias
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" value="Bebidas">Bebidas</a></li>
-                    <li><a class="dropdown-item" href="#" value="Comida">Comida</a></li>
-                    <li><a class="dropdown-item" href="#" value="Botanas">Botanas</a></li>
-                    <li><a class="dropdown-item" href="#" value="Limpieza">Limpieza</a></li>
-                    <li><a class="dropdown-item" href="#" value="Abarrotes">Abarrotes</a></li>
-                </ul>
-            </div>
+            <select class="form-select" id="categorias" name="categoria">
+                <option selected="">Seleccionar categoria</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Comida">Comida</option>
+                <option value="Botanas">Botanas</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Abarrotes">Abarrotes</option>
+            </select>
             <!-- <span>Ingresar categoria</span>
             <input class="texto" type="text" name="categoria"> -->
         </div>
@@ -62,8 +58,6 @@
             </div>
         </div>
     </form>
-    <!-- Incluye Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <!-- Boostrap JS  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -23,14 +23,14 @@
     
     $insert = "INSERT into productos (id, nombre, precio, categoria, imagen, Cantidad) VALUES(". $id .",'".$nombre ."', " .$precio ." , '" . $categoria . "', '". $nombreImagen ."', " . $cantidad . " )";
 
-    // try{
-    //     mysqli_query($conexion, $insert );
-    //     move_uploaded_file($rutaImagen, "../Images/" . $nombreImagen);
-    //     header("Location: http://localhost/store-project/inventario.php");
-    // } catch (Exception $e){
-    //     header("Location: http://localhost/store-project/inventario.php?error=" . $e->getMessage() );
-    // }
+    try{
+        mysqli_query($conexion, $insert );
+        move_uploaded_file($rutaImagen, "../Images/" . $nombreImagen);
+        header("Location: http://localhost/store-project/inventario.php");
+    } catch (Exception $e){
+        header("Location: http://localhost/store-project/inventario.php?error=" . $e->getMessage() );
+    }
 
-    //echo $insert;
+    echo $insert;
 
 ?>

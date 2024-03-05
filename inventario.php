@@ -22,7 +22,7 @@
 
     $queryComida = mysqli_query($conexion, $consultaComida);
     //Botana
-    $consultaBotana = "SELECT * FROM productos WHERE categoria='botana'";
+    $consultaBotana = "SELECT * FROM productos WHERE categoria='botanas'";
 
     $queryBotana = mysqli_query($conexion, $consultaBotana);
     //Limpieza
@@ -77,8 +77,8 @@
                         <span class="nombre">Id: <?php echo $row["id"]; ?></span>
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
