@@ -5,10 +5,12 @@ html, body {
     width: 100%;
 }
 
+/* .nav{ 
+    background-color: #383838;
+} */
+
 .contenedor{
     display: flex;
-    /* flex-wrap: wrap; */
-    height: 100%;
 }
 
 html, body {
@@ -179,7 +181,7 @@ p{
 
 .texto{
     border: 1px solid #1E1E1E;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .btn:hover{

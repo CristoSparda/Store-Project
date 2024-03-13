@@ -9,9 +9,10 @@
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $precio = $_POST['precio'];
+    $cantidad = $_POST['Cantidad'];
 
     //Codigo sql para hacer el update
-    $update = "UPDATE productos SET nombre='" . $nombre ."', precio=" . $precio . " WHERE id=" . $id;
+    $update = "UPDATE productos SET nombre='" . $nombre ."', precio=" . $precio .  ", Cantidad=" . $cantidad ." WHERE id=" . $id;
 
     
     try{
