@@ -29,14 +29,32 @@
 <body>
     <a href="./inventario.php"><button class="btn">Regresar</button></a>
     <h2 class="" style="text-align:center;">Editar Producto</h2>
-    <form class="contenedor" action="./logic/actualizarProducto.php" method="POST">
-        <div class="col d-flex flex-column align-items-center justify-content-center">
-            <img src="./images/<?php echo $producto["imagen"] ?>" class="entrada" style="display: block;" id="imgPrevia">
+    <form class="contenedor grid gap-0 column-gap-3 row-gap-3" action="./logic/actualizarProducto.php" method="POST">
+        <div class="col d-flex flex-column align-items-end justify-content-center p-2 g-col-6">
+            <div class="image-container">
+
+                <img src="./images/<?php echo $producto["imagen"] ?>" class="entrada" style="display: block;" id="imgAnterior">
+                <button id="botonEditar" class="btn editarIcon" style="border-radius: 50%;" type="button" onClic="opcionesImagen"> 
+                    <img src="Icons/editar.svg" alt="">
+                </button>
+
+                <div id="opcionBotones" class="optImg">
+                    <button class="btn" type="button">
+                        Cambiar
+                    </button>
+                    <button class="btn" type="button">
+                        Eliminar
+                    </button>
+                    <button class="btn" type="button">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
             <label for="">Cambiar cantidad disponible:</label>
             <input type="number" name="id" id="identificador" value="<?php echo $producto['id'] ?>" style="display: none;">
             <input type="number" name="Cantidad" id="disponibles" value="<?php echo $producto['Cantidad'] ?>">
         </div>
-        <div class="col d-flex flex-column align-items-center justify-content-center">
+        <div class="col d-flex flex-column align-items-start justify-content-center p-2 g-col-6">
             <label for="">Cambiar Nombre:</label>
             <input type="text" name="nombre" id="nombre" value="<?php echo $producto['nombre'] ?>">
 
@@ -46,4 +64,14 @@
         </div>
     </form>
 </body>
+<script>
+    function opcionesImagen(){
+        console.log("Esta entrando a la función");
+        document.getElementById("opcionBotones").style.display = "flex 1important";
+    }
+
+    window.addEventListener("click", function(event){
+        console.log(event.target);
+    });
+</script>
 </html>
