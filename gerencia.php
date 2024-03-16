@@ -16,6 +16,28 @@
         header("Location: http://localhost/store-project/vendedor.php?error=Necesitas ser administrador para ingresar..." );
         return;
      }
+     
+    //consultar mediante la variable conexion
+    //Bebidas
+    $consultaBebidas = "SELECT * FROM productos WHERE categoria='bebidas'";
+
+    $queryBebidas = mysqli_query($conexion, $consultaBebidas);
+    //Comida
+    $consultaComida = "SELECT * FROM productos WHERE categoria='comida'";
+
+    $queryComida = mysqli_query($conexion, $consultaComida);
+    //Botana
+    $consultaBotana = "SELECT * FROM productos WHERE categoria='botanas'";
+
+    $queryBotana = mysqli_query($conexion, $consultaBotana);
+    //Limpieza
+    $consultaLimpieza = "SELECT * FROM productos WHERE categoria='limpieza'";
+
+    $queryLimpieza = mysqli_query($conexion, $consultaLimpieza);
+    //Abarrotes
+    $consultaAbarrotes = "SELECT * FROM productos WHERE categoria='abarrotes'";
+
+    $queryAbarrotes = mysqli_query($conexion, $consultaAbarrotes);
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +48,9 @@
     <title>Administrador</title>
     
 	<link href="style.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 
@@ -44,7 +68,7 @@
                 <button id="botonAbarrotes"><h4>Abarrotes</h4></button>
             </div>  
         <div >
-        <div class="contenedorCategoria" id="bebidas" style="flex-direction: column; padding: 16px;">
+        <div class="contenedor" id="bebidas" style="flex-direction: column; padding: 16px;">
             <h2>Bebidas</h2>
             <div class="rowInventario">
                 <!-- ciclo para mostrar solo la categoria bebidas  -->
@@ -58,6 +82,44 @@
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                         <button type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 <?php
                 }

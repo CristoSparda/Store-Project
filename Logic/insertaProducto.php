@@ -13,7 +13,7 @@
 
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
-    $precio = $_POST['precio'];
+    $precio = $_POST['precio']; 
     $categoria = $_POST['categoria'];
     $cantidad = $_POST['cantidad'];
 
