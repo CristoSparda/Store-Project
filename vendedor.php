@@ -49,6 +49,27 @@
 
 
 <body>
+    <ul class="nav nav-tabs">
+        <a  style="margin: 8px;" href="../inventario.php"><button class="btn"><img src="../icons/arrow-left.svg" alt="">Regresar</button></a>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../vendedor.php">Venta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="inventario.php">Inventario</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Administración</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Agrega productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+    </ul>
     <div class="contenedor">
         <div class="categoriaLateral">
 

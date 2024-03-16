@@ -12,8 +12,22 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form class="contenedor" action="../logic/insertaProducto.php" method="POST" enctype="multipart/form-data" >
+    <ul class="nav nav-tabs">
         <a  style="margin: 8px;" href="../inventario.php"><button class="btn"><img src="../icons/arrow-left.svg" alt="">Regresar</button></a>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../vendedor.php">Venta</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../inventario.php">Inventario</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../gerencia.php">Administración</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Agrega productos</a>
+        </li>
+    </ul>
+    <form class="contenedor" action="../logic/insertaProducto.php" method="POST" enctype="multipart/form-data" >
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <h1>Agrega un producto</h1>
             <br>
@@ -27,10 +41,10 @@
             <span>Ingresar nombre</span>
             <input class="texto" type="text" name="nombre">
             <br>
-            <span>Ingresar ID</span>
-            <input class="texto" type="number" name="id">
+            <!-- <span>Ingresar ID</span>
+            <input class="texto" type="number" name="id"> -->
             <br>
-            <select class="form-select" id="categorias" name="categoria">
+            <select class="texto form-select" id="categorias" name="categoria">
                 <option selected="">Seleccionar categoria</option>
                 <option value="Bebidas">Bebidas</option>
                 <option value="Comida">Comida</option>
