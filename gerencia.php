@@ -81,7 +81,7 @@
     <ul class="nav nav-tabs">
         <a  style="margin: 8px;" href="../inventario.php"><button class="btn"><img src="../icons/arrow-left.svg" alt="">Regresar</button></a>
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../vendedor.php">Venta</a>
+            <a class="nav-link" aria-current="page" href="./vendedor.php">Venta</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="inventario.php">Inventario</a>
@@ -102,7 +102,6 @@
     <div class="contenedor" style="flex-wrap: nowrap;">
        
         <div class="menuLateral">
-                <a href="./logic/logout.php"><button>Cerrar sesión</button></a>
                 <h1>Categorias</h1>
                 <br>
                 <button id="botonBebidas"><h4>Bebidas</h4></button>
@@ -125,45 +124,7 @@
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
-                    </div>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                            </div>
-                        </div>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -183,7 +144,7 @@
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -203,7 +164,7 @@
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php 
                 }
@@ -224,7 +185,7 @@
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -244,7 +205,7 @@
                         <span class="nombre">Producto: <?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
+                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php 
                 }
