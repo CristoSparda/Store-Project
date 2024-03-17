@@ -66,17 +66,17 @@
             <a class="nav-link" href="./CRUD/agregaProd.php">Agrega productos</a>
         </li>
     </ul>
-    <div class="menuLateral">
+    <div class="contenedor" style="flex-wrap: nowrap;">
+        <div class="menuLateral">
                 <h1>Categorias</h1>
                 <br>
-                <button id="botonBebidas"><h4>Bebidas</h4></button>
-                <button id="botonComida"><h4>Comida</h4></button>
-                <button id="botonBotanas"><h4>Botanas</h4></button>
-                <button id="botonLimpieza"><h4>Limpieza</h4></button>
-                <button id="botonAbarrotes"><h4>Abarrotes</h4></button>
+                <button class="btn" id="botonBebidas"><h4>Bebidas</h4></button>
+                <button class="btn" id="botonComida"><h4>Comida</h4></button>
+                <button class="btn" id="botonBotanas"><h4>Botanas</h4></button>
+                <button class="btn" id="botonLimpieza"><h4>Limpieza</h4></button>
+                <button class="btn" id="botonAbarrotes"><h4>Abarrotes</h4></button>
             </div>  
         <div >
-    <div class="contenedor" style="flex-wrap: nowrap;">
         <div class="contenedorCategoria" id="bebidas" style="flex-direction: column; padding: 16px;">
             <h2>Bebidas</h2>
             <div class="rowInventario">

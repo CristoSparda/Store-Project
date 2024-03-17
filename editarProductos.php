@@ -29,27 +29,25 @@
 <body>
     <a href="./inventario.php"><button class="btn">Regresar</button></a>
     <h2 class="" style="text-align:center;">Editar Producto</h2>
-    <form class="contenedor grid gap-0 column-gap-3 row-gap-3" action="./logic/actualizarProducto.php" method="POST">
+    <form class="contenedor grid gap-0 column-gap-3 row-gap-3" action="./logic/actualizarProducto.php" method="POST" enctype="multipart/form-data" >
         <div class="col d-flex flex-column align-items-end justify-content-center p-2 g-col-6">
             <div class="image-container">
 
                 <img src="./images/<?php echo $producto["imagen"] ?>" class="entrada" style="display: block;" id="imgAnterior">
-                <button id="botonEditar" class="btn editarIcon" style="border-radius: 50%;" type="button" onClic="opcionesImagen"> 
-                    <img src="Icons/editar.svg" alt="">
+                <button id="botonEditar" class="btn editarIcon" style="border-radius: 50%;" type="button" onclick="opcionesImagen()"> 
+                    <img id="iconoEditar" src="Icons/editar.svg" alt="">
                 </button>
 
                 <div id="opcionBotones" class="optImg">
-                    <button class="btn" type="button">
+                    <button id="Cambiar" class="btn" type="button" onclick="cambiarImagen()">
                         Cambiar
                     </button>
-                    <button class="btn" type="button">
-                        Eliminar
-                    </button>
-                    <button class="btn" type="button">
+                    <button id="Cancelar" class="btn" type="button">
                         Cancelar
                     </button>
                 </div>
             </div>
+            <input type="file" id="inputImagen" name="imagen" style="display: none;" value="<?php echo $producto['imagen'] ?>">
             <label for="">Cambiar cantidad disponible:</label>
             <input type="number" name="id" id="identificador" value="<?php echo $producto['id'] ?>" style="display: none;">
             <input type="number" name="Cantidad" id="disponibles" value="<?php echo $producto['Cantidad'] ?>">
@@ -66,12 +64,34 @@
 </body>
 <script>
     function opcionesImagen(){
-        console.log("Esta entrando a la función");
-        document.getElementById("opcionBotones").style.display = "flex 1important";
+        document.getElementById("opcionBotones").style.display = "flex";
     }
 
     window.addEventListener("click", function(event){
-        console.log(event.target);
+        if( event.target.id != "botonEditar" && event.target.id != "iconoEditar" ){
+            document.getElementById("opcionBotones").style.display = "none";
+        }
     });
+
+    let valor = document.getElementById("inputImagen");
+
+    // accion de boton de cambiar
+    function cambiarImagen(){
+        document.getElementById("inputImagen").click();
+        let nombreImagen = valor.value;
+        console.log("Valor: " + nombreImagen);
+    };
+
+    //función para poner la nueva imagen
+    valor.addEventListener("change", function(event){
+        document.getElementById("imgAnterior").src = URL.createObjectURL(event.target.files[0]);
+    });
+
+    //detecta que algunos de los inputs se active
+    inputNombre = document.getElementById("nombre");        
+    inputPrecio = document.getElementById("precio");
+    inputCantidad = document.getElementById("cantidad");
+
+
 </script>
 </html>
