@@ -29,7 +29,7 @@
 <body>
     <a href="./inventario.php"><button class="btn">Regresar</button></a>
     <h2 class="" style="text-align:center;">Editar Producto</h2>
-    <form class="contenedor grid gap-0 column-gap-3 row-gap-3" action="./logic/actualizarProducto.php" method="POST" enctype="multipart/form-data" >
+    <form class="contenedor grid gap-0 column-gap-3 row-gap-3" id="formEditar" action="./logic/actualizarProducto.php" method="POST" enctype="multipart/form-data" >
         <div class="col d-flex flex-column align-items-end justify-content-center p-2 g-col-6">
             <div class="image-container">
 
@@ -47,7 +47,8 @@
                     </button>
                 </div>
             </div>
-            <input type="file" id="inputImagen" name="imagen" style="display: none;" value="<?php echo $producto['imagen'] ?>">
+            <input type="file" id="inputImagen" name="imagen" style="display: none;">
+            <span id="imagenAnterior" style="display: none;" ><?php echo $producto['imagen'] ?></span>
             <label for="">Cambiar cantidad disponible:</label>
             <input type="number" name="id" id="identificador" value="<?php echo $producto['id'] ?>" style="display: none;">
             <input type="number" name="Cantidad" id="disponibles" value="<?php echo $producto['Cantidad'] ?>">
@@ -58,6 +59,7 @@
 
             <label for="">Cambiar Precio:</label> 
             <input type="number" name="precio" id="precio" value="<?php echo $producto['precio'] ?>">
+            <input type="text" name="nombreAnterior" style="display: none;">
             <button type="submit">Actualizar</button>
         </div>
     </form>
@@ -87,11 +89,30 @@
         document.getElementById("imgAnterior").src = URL.createObjectURL(event.target.files[0]);
     });
 
+    //aqui se toma del front el nombre de la imagen que ya existe
+    let nombreAnterior = document.getElementById("imagenAnterior").innerText;
+    
     //detecta que algunos de los inputs se active
     inputNombre = document.getElementById("nombre");        
-    inputPrecio = document.getElementById("precio");
-    inputCantidad = document.getElementById("cantidad");
+    
+    inputNombre.addEventListener("input", function(){
+        document.getElementById("formEditar").nombreAnterior.value = nombreAnterior;
+    });
 
+    inputPrecio = document.getElementById("precio");
+    
+    inputPrecio.addEventListener("input", function(){
+        document.getElementById("formEditar").nombreAnterior.value = nombreAnterior;
+    });
+
+    inputCantidad = document.getElementById("disponibles");
+    
+    inputCantidad.addEventListener("input", function(){
+        document.getElementById("formEditar").nombreAnterior.value = nombreAnterior;
+    });
+
+
+    
 
 </script>
 </html>
