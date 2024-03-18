@@ -66,6 +66,8 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
         </li>
+
+        <input type="text" placeholder="Busca un producto" id="buscador">
     </ul>
     <div class="contenedor">
         <div class="categoriaLateral">
@@ -73,13 +75,13 @@
             <!-- Categorias en el menu lateral -->
     
             <div class="accordion row">
-                <button class="Drop" id="dropComida">
+                <button class="btn Drop" data-bs-toggle="collapse" href="#collapseComida" role="button" aria-expanded="false" aria-controls="collapseComida">
                     <h2>Comida</h2>
                     <img src="Icons/arrowDown.svg" alt="" srcset="">
                 </button>
             </div>
     
-            <div class="contenedorCategoria" id="collapseComida">
+            <div class="collapse multi-collapse" id="collapseComida">
                 <div class="rowInventario">
                     <!-- ciclo para mostrar solo la categoria comida  -->
                     <?php 
@@ -244,74 +246,16 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
 <script>
+    // función para el buscador 
+    let buscador = document.getElementById('buscador');
 
-    //función para ocultar la categoria de comida 
-    comidaBoton = document.getElementById("dropComida");
-
-    comidaCont = document.getElementById("collapseComida");
-
-    comidaBoton.addEventListener("click", function(){
-        if( comidaCont.style.display == "none" ){
-            comidaCont.style.display = "flex";
-        }else {
-            comidaCont.style.display = "none";
-        }
-    });
-
-    //función para ocultar la categoria de bebidas
-    bebidasBoton = document.getElementById("dropBebida");
-
-    bebidasCont = document.getElementById("collapseBebida");
-
-    bebidasBoton.addEventListener("click", function(){
-        if( bebidasCont.style.display == "none" ){
-            bebidasCont.style.display = "flex";
-        }else {
-            bebidasCont.style.display = "none";
-        }
-    });
-
-    //función para ocultar la categoria de Limpieza
-    LimpiezaBoton = document.getElementById("dropLimpieza");
-
-    LimpiezaCont = document.getElementById("collapseLimpieza");
-
-    LimpiezaBoton.addEventListener("click", function(){
-        if( LimpiezaCont.style.display == "none" ){
-            LimpiezaCont.style.display = "flex";
-        }else {
-            LimpiezaCont.style.display = "none";
-        }
-    });
-
-    //función para ocultar la categoria de abarrotes
-    AbarrotesBoton = document.getElementById("dropAbarrotes");
-
-    AbarrotesCont = document.getElementById("collapseAbarrotes");
-
-    AbarrotesBoton.addEventListener("click", function(){
-        if( AbarrotesCont.style.display == "none" ){
-            AbarrotesCont.style.display = "flex";
-        }else {
-            AbarrotesCont.style.display = "none";
-        }
-    });
-
-    
-    //función para ocultar la categoria de Botana
-    BotanaBoton = document.getElementById("dropBotana");
-
-    BotanaCont = document.getElementById("collapseBotana");
-
-    BotanaBoton.addEventListener("click", function(){
-        if( BotanaCont.style.display == "none" ){
-            BotanaCont.style.display = "flex";
-        }else {
-            BotanaCont.style.display = "none";
-        }
+    buscador.addEventListener('input', function(event){
+        console.log(event);
     });
 
 </script>
