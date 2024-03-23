@@ -162,7 +162,8 @@ p{
     color: #FFFFFF;
     position: fixed;
     right: 10px;
-    bottom: 10px; 
+    bottom: 10px;
+    border: none;
 }
 
 .rowTotal{

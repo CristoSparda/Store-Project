@@ -27,7 +27,7 @@
             <a class="nav-link" href="#">Agrega productos</a>
         </li>
     </ul>
-    <form class="contenedor" action="../logic/insertaProducto.php" method="POST" enctype="multipart/form-data" >
+    <form id="formAgrega" class="contenedor" action="../logic/insertaProducto.php" method="POST" enctype="multipart/form-data" >
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <h1>Agrega un producto</h1>
             <br>
@@ -39,28 +39,32 @@
         </div>
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <span>Ingresar nombre</span>
-            <input class="texto" type="text" name="nombre">
+            <input id="nombre" class="texto" type="text" name="nombre">
+            <span id="alertaName" class="text-light bg-danger border border-danger p-2 mt-2 rounded-3" style="display: none;">Falta ingresar el nombre</span>
             <br>
             <!-- <span>Ingresar ID</span>
             <input class="texto" type="number" name="id"> -->
             <br>
             <select class="texto form-select" id="categorias" name="categoria">
-                <option selected="">Seleccionar categoria</option>
+                <option selected>Seleccionar categoria</option>
                 <option value="Bebidas">Bebidas</option>
                 <option value="Comida">Comida</option>
                 <option value="Botanas">Botanas</option>
                 <option value="Limpieza">Limpieza</option>
                 <option value="Abarrotes">Abarrotes</option>
             </select>
+            <span id="alertaCategorias" class="text-light bg-danger border border-danger p-2 mt-2 rounded-3" style="display: none;">Seleccione una categoria valida</span>
             <!-- <span>Ingresar categoria</span>
             <input class="texto" type="text" name="categoria"> -->
         </div>
         <div class="col d-flex flex-column align-items-center justify-content-center">
             <span>Ingresar Precio</span>
-            <input class="texto" type="text" name="precio">
+            <input id="precio" class="texto" type="text" name="precio">
+            <span id="alertaPrecio" class="text-light bg-danger border border-danger p-2 mt-2 rounded-3" style="display: none;">Falta ingresar el precio</span>
             <br>
             <span>Cantidad a ingresar</span>
-            <input class="texto" type="number" name="cantidad">
+            <input id="cantidad" class="texto" type="number" name="cantidad">
+            <span id="alertaCantidad" class="text-light bg-danger border border-danger p-2 mt-2 rounded-3" style="display: none;">Falta ingresar la cantidad</span>
             <br>
             <div class="row">
                 <div class="col">
@@ -88,6 +92,63 @@
         input.style.display = "none";
         imgPrev.style.display = "none";
         output.style.display = "block";
+    });
+
+    //detecta que cualquiera de los inputs no tenga valores vacios
+    let formulario = document.getElementById("formAgrega");
+
+    let nombre = document.getElementById("nombre");
+    let categorias = document.getElementById("categorias");
+    let cantidad = document.getElementById("cantidad");
+    let precio = document.getElementById("precio");
+    //variables para las alertas visuales para el usuario
+    let alertaNombre = document.getElementById("alertaName");
+    let alertaCategorias = document.getElementById("alertaCategorias");
+    let alertaCantidad = document.getElementById("alertaCantidad");
+    let alertaPrecio = document.getElementById("alertaPrecio");
+
+    formulario.addEventListener("submit", function(event){
+        //verifica si tiene algo escrito el input de nombre
+        if( nombre.value == "" ){
+            event.preventDefault();
+            console.log("Nombre esta vacio");
+            alertaNombre.style.display = "block";
+        }
+        //verifica si tiene algo escrito el input de cantidad
+        if( cantidad.value == "" ){
+            event.preventDefault();
+            console.log("Cantidad esta vacio");
+            alertaCantidad.style.display = "block";
+        }
+        //verifica si tiene algo escrito el iinput de precio
+        if( cantidad.value == "" ){
+            event.preventDefault();
+            console.log("Precio esta vacio");
+            alertaPrecio.style.display = "block";
+        }
+        //verifica si tiene algo escrito el iinput de categoria
+        if( categorias.value == "Seleccionar categoria" ){
+            event.preventDefault();
+            alertaCategorias.style.display = "block";
+        }
+    });
+
+    //si empieza a escrbirse o cambiar algun input se quitaran las alertas
+    nombre.addEventListener('input', function() {
+        console.log("Se esta escribiendo en el input name");
+        alertaName.style.display = "none";
+    });
+    categorias.addEventListener('change', function() {
+        console.log("Se selecciono un valor");
+        alertaCategorias.style.display = "none";
+    });
+    precio.addEventListener('input', function(){
+        console.log("Se esta agregando un precio");
+        alertaPrecio.style.display = "none";
+    });
+    cantidad.addEventListener('input', function(){
+        console.log("Se esta agregando una cantidad");
+        alertaCantidad.style.display = "none";
     });
 
 </script>
