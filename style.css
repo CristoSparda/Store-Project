@@ -69,7 +69,10 @@ p{
 
 .contenedorProductos{
     display: flex;
+}
 
+.contenedorProductos:hover{
+    background-color: #D5D7DC;
 }
 
 .loginImage{
