@@ -67,175 +67,139 @@
             <a class="nav-link" href="#">Link</a>
         </li>
 
-        <input type="text" placeholder="Busca un producto" id="buscador">
+        <input class="busqueda" type="text" placeholder="Busca un producto" id="buscador">
     </ul>
     <div class="contenedor">
         <div class="categoriaLateral">
 
             <!-- Categorias en el menu lateral -->
-    
-            <div class="accordion row">
-                <button class="btn Drop" data-bs-toggle="collapse" href="#collapseComida" role="button" aria-expanded="false" aria-controls="collapseComida">
-                    <h2>Comida</h2>
-                    <img src="Icons/arrowDown.svg" alt="" srcset="">
-                </button>
-            </div>
-    
-            <div class="collapse multi-collapse" id="collapseComida">
-                <div class="rowInventario">
-                    <!-- ciclo para mostrar solo la categoria comida  -->
-                    <?php 
-                        while ($row = mysqli_fetch_array($queryComida)){
-                    ?>
-                        <div class="contenedorProducto">
-                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
-                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
-                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Comidas
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="rowInventario">
+                        <!-- ciclo para mostrar solo la categoria comida  -->
+                        <?php 
+                            while ($row = mysqli_fetch_array($queryComida)){
+                        ?>
+                            <div class="contenedorProducto">
+                                <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                                <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                                <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                                <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                            </div>
+                        <?php 
+                        }
+                        ?>
                         </div>
-                    <?php 
-                    }
-                    ?>
+                    </div>
                 </div>
-            </div>
-    
-            <div class="accordion row">
-                <button class="Drop" id="dropBebida">
-                    <h2>Bebidas</h2>
-                    <img src="Icons/arrowDown.svg" alt="" srcset="">
-                </button>
-            </div>
-    
-            <div class="contenedorCategoria" id="collapseBebida">
-                <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-                <div class="rowInventario">
-                    <!-- ciclo para mostrar solo la categoria bebidas  -->
-                    <?php 
-                        while ($row = mysqli_fetch_array($queryBebidas)){
-                    ?>
-                        <div class="contenedorProducto">
-                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
-                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
-                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div>
-    
-            <div class="accordion row">
-                <button class="Drop" id="dropLimpieza">
-                    <h2>Limpieza</h2>
-                    <img src="Icons/arrowDown.svg" alt="" srcset="">
-                </button>
-            </div>
-    
-            <div class="contenedorCategoria" id="collapseLimpieza">
-                <div class="rowInventario">
-                    <!-- ciclo para mostrar solo la categoria limpieza -->
-                    <?php 
-                    while ($row = mysqli_fetch_array($queryLimpieza)){
-                    ?>
-                        <div class="contenedorProducto">
-                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
-                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
-                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div>
-    
-            <div class="accordion row">
-                <button class="Drop" id="dropAbarrotes">
-                    <h2>Abarrotes</h2>
-                    <img src="Icons/arrowDown.svg" alt="" srcset="">
-                </button>
-            </div>
-    
-            <div class="contenedorCategoria" id="collapseAbarrotes">
-                <div class="rowInventario">
-                    <!-- ciclo para mostrar solo la categoria abarrotes  -->
-                    <?php 
-                        while ($row = mysqli_fetch_array($queryAbarrotes)){
-                    ?>
-                        <div class="contenedorProducto">
-                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
-                            <span class="nombre">Id: <?php echo $row["id"]; ?></span>
-                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
-                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
-                        </div>
-                    <?php 
-                    }
-                    ?>
-                </div>
-            </div>
 
-            <div class="accordion row">
-                <button class="Drop" id="dropBotana">
-                    <h2>Botana</h2>
-                    <img src="Icons/arrowDown.svg" alt="" srcset="">
-                </button>
-            </div>
-    
-            <div class="contenedorCategoria" id="collapseBotana">
-                <div class="rowInventario">
-                    <!-- ciclo para mostrar solo la categoria Botana  -->
-                    <?php 
-                        while ($row = mysqli_fetch_array($queryBotana)){
-                    ?>
-                        <div class="contenedorProducto">
-                            <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
-                            <span class="nombre">Id: <?php echo $row["id"]; ?></span>
-                            <span class="nombre"><?php echo $row["nombre"]; ?></span>
-                            <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
-                            <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Bebidas
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                        <div class="rowInventario">
+                        <!-- ciclo para mostrar solo la categoria bebidas  -->
+                        <?php 
+                            while ($row = mysqli_fetch_array($queryBebidas)){
+                        ?>
+                            <div class="contenedorProducto">
+                                <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                                <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                                <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                                <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseLimp" aria-expanded="false" aria-controls="panelsStayOpen-collapseLimp">
+                        Limpieza
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseLimp" class="accordion-collapse collapse">
+                        <div class="rowInventario">
+                        <!-- ciclo para mostrar solo la categoria limpieza -->
+                        <?php 
+                        while ($row = mysqli_fetch_array($queryLimpieza)){
+                        ?>
+                            <div class="contenedorProducto">
+                                <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                                <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                                <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                                <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseAbarr" aria-expanded="false" aria-controls="panelsStayOpen-collapseAbarr">
+                        Abarrotes
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseAbarr" class="accordion-collapse collapse">
+                        <div class="rowInventario">
+                            <!-- ciclo para mostrar solo la categoria abarrotes  -->
+                            <?php 
+                                while ($row = mysqli_fetch_array($queryAbarrotes)){
+                            ?>
+                                <div class="contenedorProducto">
+                                    <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                                    <span class="nombre">Id: <?php echo $row["id"]; ?></span>
+                                    <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                                    <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                                    <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                                </div>
+                            <?php 
+                            }
+                            ?>
                         </div>
-                    <?php 
-                    }
-                    ?>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseBotana" aria-expanded="false" aria-controls="panelsStayOpen-collapseBotana">
+                        Botanas
+                    </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseBotana" class="accordion-collapse collapse">
+                        watefok
+                        <div class="rowInventario">
+                            <!-- ciclo para mostrar solo la categoria Botana  -->
+                            <?php 
+                                while ($row = mysqli_fetch_array($queryBotana)){
+                            ?>
+                                <div class="contenedorProducto">
+                                    <img class="imagenCategoria" src="./images/<?php echo $row["imagen"] ?>" alt="">
+                                    <span class="nombre">Id: <?php echo $row["id"]; ?></span>
+                                    <span class="nombre"><?php echo $row["nombre"]; ?></span>
+                                    <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
+                                    <span style="<?php echo ($row['Cantidad'] < 1) ? 'color: red;' : ''; ?>">Disponibles: <?php echo $row['Cantidad']; ?></span>
+                                </div>
+                            <?php 
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
     

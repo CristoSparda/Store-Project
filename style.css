@@ -62,6 +62,12 @@ p{
     margin: 8px;
 }
 
+.busqueda{
+    border-radius: 32px;
+    height: 80%;
+    width: 40%;
+}
+
 .imgProducto{
     width: 200px;
     height: 200px;
