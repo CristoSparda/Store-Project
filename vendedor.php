@@ -60,12 +60,6 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Agrega productos</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
 
         <input class="busqueda" type="text" placeholder="Busca un producto" id="buscador">
     </ul>

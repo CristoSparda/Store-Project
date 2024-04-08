@@ -63,7 +63,7 @@
             <a class="nav-link" href="gerencia.php">Administración</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./CRUD/agregaProd.php">Agrega productos</a>
+            <a class="nav-link" href="#">Reportes</a>
         </li>
     </ul>
     <div class="contenedor" style="flex-wrap: nowrap;">
@@ -90,8 +90,6 @@
                         <span class="nombre"><?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: $<?php echo $row["precio"]; ?></span>
                         <span class="nombre">Disponibles: <?php echo $row["Cantidad"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -111,8 +109,6 @@
                         <span class="nombre"><?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <span class="nombre">Disponibles: <?php echo $row["Cantidad"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -132,8 +128,6 @@
                         <span class="nombre"><?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <span class="nombre">Disponibles: <?php echo $row["Cantidad"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php 
                 }
@@ -154,8 +148,6 @@
                         <span class="nombre"><?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <span class="nombre">Disponibles: <?php echo $row["Cantidad"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php
                 }
@@ -175,8 +167,6 @@
                         <span class="nombre"><?php echo $row["nombre"]; ?></span>
                         <span class="nombre">Precio: <?php echo $row["precio"]; ?></span>
                         <span class="nombre">Disponibles: <?php echo $row["Cantidad"]; ?></span>
-                        <button class="btn btn-primary" type="button" onclick="window.location.href='./editarProductos.php?id=<?php echo $row['id'] ?>'">Actualizar</button>
-                        <button class="btn btn-danger" type="button" onclick="window.location.href='./logic/eliminarProducto.php?id=<?php echo $row['id'] ?>'">Eliminar</button>
                     </div>
                 <?php 
                 }

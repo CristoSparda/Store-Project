@@ -87,17 +87,7 @@
             <a class="nav-link" href="inventario.php">Inventario</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Administración</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Agrega productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
+            <a class="nav-link" href="#">Reportes</a>
     </ul>
     <div class="contenedor" style="flex-wrap: nowrap;">
        
